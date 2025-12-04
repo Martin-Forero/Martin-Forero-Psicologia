@@ -86,7 +86,7 @@ h4 {
 
 /* Para secciones que queremos que tengan un fondo opaco sobre la textura */
 .seccion {
-    padding: 4rem 0;
+    padding: 4rem 2rem;
     background-color: rgba(255, 255, 255, 0.75); /* Fondo blanco con 75% de opacidad */
     box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra para que destaque un poco */
     margin-bottom: 2rem; /* Espacio entre secciones */
@@ -188,13 +188,13 @@ h4 {
 .logo-text {
     font-family: Times New Roman, serif;
     color: #251c17;
-    font-size: 0.58rem;
+    font-size: 0.70rem;
     font-weight: 600;
     letter-spacing: 0.01px;
     text-align: center;
-    width: 130px;
+    width: 160px;
     /* CAMBIO: Margen ajustado a la nueva altura del logo */
-    margin-top: -25px;
+    margin-top: -20px;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -274,6 +274,17 @@ h4 {
     align-items: center;
 }
 
+/* **[CAMBIO 1] NUEVO: Contenedor de texto para aplicar el margen interior (padding) si está en un recuadro** */
+.quien-soy-texto-contenedor {
+    padding: 2rem; 
+}
+
+/* **[CAMBIO 2] NUEVA REGLA: Justificar el texto de la sección ¿Quién soy?** */
+.quien-soy-texto p {
+    text-align: justify;
+    margin-bottom: 1rem; /* Espacio entre párrafos justificados */
+}
+
 .quien-soy-img img {
     width: 100%;
     max-width: 350px;
@@ -330,6 +341,7 @@ h4 {
 .card {
     background-color: var(--color-blanco); 
     color: var(--color-texto-oscuro);
+    /* [CAMBIO 1] Ya tenía padding, pero lo revisamos para asegurar margen interior */
     padding: 2.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -351,7 +363,8 @@ h4 {
 
 .servicio-item {
     background-color: var(--color-blanco);
-    padding: 1.5rem;
+    /* **[CAMBIO 1] Se aumenta el padding para dar más margen interior en la versión ordenador** */
+    padding: 2.5rem 1.5rem;
     border-radius: 10px;
     text-align: center;
     border: 2px solid var(--color-verde-principal); 
@@ -682,8 +695,9 @@ h4 {
         grid-template-columns: repeat(2, 1fr); 
         gap: 1rem;
     }
+    /* **[CAMBIO 1] Ajuste del padding del servicio item para móvil** */
     .servicio-item {
-        padding: 1rem;
+        padding: 1.5rem 1rem; /* Reduzco el padding en móvil */
     }
     .servicio-item i {
         font-size: 2.5rem;

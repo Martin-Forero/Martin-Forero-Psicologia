@@ -32,8 +32,8 @@ html, body {
     color: var(--color-texto-oscuro);
     line-height: 1.6;
     
-    /* CAMBIO: Padding ajustado para Top-bar (30px) + Navbar (nueva altura ~90px) = 120px */
-    padding-top: 120px; 
+    /* CAMBIO: Padding ajustado para Top-bar (30px) + Navbar (110px) = 140px */
+    padding-top: 140px; 
 }
 
 /* --- REGLA CORREGIDA: FONDO FIJO OPTIMIZADO --- */
@@ -155,14 +155,16 @@ h4 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     z-index: 1000;
     border-bottom: none; 
-    padding-bottom: 0.5rem; /* Espacio extra para el texto del logo */
+    padding: 0; /* Sin padding vertical para minimizar margen */
+    margin: 0;
+    height: 110px; /* Altura fija para escritorio, similar a original pero ajustada */
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: auto; 
+    height: 100%; 
 }
 
 .navbar .nav-container.container {
@@ -170,35 +172,24 @@ h4 {
     padding-right: 2rem; 
 }
 
+.logo {
+    height: 155%;
+}
+
 .logo a {
     text-decoration: none;
     color: var(--color-texto-oscuro); 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    height: 100%;
 }
 
 .logo-img {
-    /* CAMBIO: Altura reducida para una barra de navegación más delgada */
-    height: 90px; 
-    width: auto; /* Ancho automático para mantener proporción */
+    height: 100%; /* Logo ocupa toda la altura de la barra */
+    width: auto; /* Mantiene proporción sin distorsión */
     display: block; 
 }
-
-.logo-text {
-    font-family: Times New Roman, serif;
-    color: #251c17;
-    font-size: 0.70rem;
-    font-weight: 600;
-    letter-spacing: 0.01px;
-    text-align: center;
-    width: 160px;
-    /* CAMBIO: Margen ajustado a la nueva altura del logo */
-    margin-top: -20px;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
 
 .nav-menu {
     display: flex;
@@ -546,7 +537,7 @@ h4 {
 @media (max-width: 768px) {
     /* CAMBIO: Ajustado el padding-top para la nueva altura de la cabecera móvil */
     html, body {
-        padding-top: 90px; /* 30px top-bar + 60px navbar */
+        padding-top: 100px; /* 30px top-bar + 70px navbar */
     }
 
     h1 { font-size: 2.5rem; }
@@ -568,17 +559,8 @@ h4 {
     
     /* CAMBIOS: Ajustes para una barra de navegación móvil más delgada */
     .navbar {
-        padding-bottom: 0;
-    }
-    .nav-container {
-        height: 60px; /* Altura fija para la barra de navegación móvil */
-    }
-    .logo-img {
-        height: 50px; /* Logo más pequeño en móvil */
-    }
-    .logo-text {
-        margin-top: -10px; /* Ajuste de margen para logo pequeño */
-        font-size: 0.5rem; /* Texto más pequeño */
+        padding: 0;
+        height: 70px; /* Altura ajustada para móvil */
     }
 
     .navbar .nav-container.container {
@@ -589,8 +571,8 @@ h4 {
     .nav-menu {
         display: none;
         position: absolute;
-        /* CAMBIO: Ajustado 'top' a la nueva altura total (30px + 60px) */
-        top: 90px; 
+        /* CAMBIO: Ajustado 'top' a la nueva altura total (30px + 70px) */
+        top: 100px; 
         left: 0;
         width: 100%;
         background-color: rgba(58, 71, 77, 0.9); 

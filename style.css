@@ -2,7 +2,7 @@
 :root {
     --color-fondo-base: #F8EFEA;      /* Beige-rosa claro, para texto */
     --color-texto-oscuro: #4A3C32;     /* Marrón oscuro, para texto principal */
-    --color-navbar: #FDF9F7;           /* Blanco muy roto para la barra de navegación */
+    --color-navbar: #FDF9F7;           /* Blanco muy roto (Referencia para opacidad) */
     --color-logo-resalte: #D5B99F;     /* Un beige cálido para resaltar si el logo lo necesita */
     --color-montana-oscura: #3A474D;   /* Gris-azulado oscuro de las montañas */
     --color-naranja-quemado: #E2725B;  /* Naranja/terracota vibrante de las montañas */
@@ -71,7 +71,12 @@ h1, h2, h3, h4 {
     color: var(--color-texto-oscuro); /* Asegura que los títulos tengan el color de texto oscuro */
 }
 
-h1 { font-size: 3rem; } /* Ajuste inicial para H1 */
+h1 { 
+    /* CAMBIO: Fuente EB Garamond para el H1 principal */
+    font-family: 'EB Garamond', serif;
+    font-size: 3rem; 
+} 
+
 h2 { font-size: 2.5rem; text-align: center; }
 h3 { font-size: 1.8rem; }
 h4 { 
@@ -151,13 +156,21 @@ h4 {
     top: 30px;
     left: 0;
     width: 100%;
-    background-color: var(--color-navbar); 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    
+    /* CAMBIO SOLICITADO: Transparencia ajustada a 0.25 */
+    /* Usamos RGBA basado en el color original (#FDF9F7 = 253, 249, 247) */
+    background-color: rgba(253, 249, 247, 0.25); 
+    
+    /* Efecto "blur" (desenfoque) para que se lea mejor el contenido que pasa por debajo */
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); /* Para Safari */
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra más suave por la transparencia */
     z-index: 1000;
     border-bottom: none; 
     padding: 0; /* Sin padding vertical para minimizar margen */
     margin: 0;
-    height: 110px; /* Altura fija para escritorio, similar a original pero ajustada */
+    height: 110px; /* Altura fija para escritorio */
 }
 
 .nav-container {
@@ -536,6 +549,12 @@ h4 {
 
 /* --- RESPONSIVE DESIGN (MÓVILES) --- */
 @media (max-width: 768px) {
+    
+    /* CAMBIO SOLICITADO: Cargar otra imagen de fondo para smartphones */
+    body::before {
+        background-image: url('Montañas vertical.webp');
+    }
+
     /* CAMBIO: Ajustado el padding-top para la nueva altura de la cabecera móvil */
     html, body {
         padding-top: 100px; /* 30px top-bar + 70px navbar */

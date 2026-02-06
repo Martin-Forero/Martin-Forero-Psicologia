@@ -92,7 +92,7 @@ h4 {
 /* Para secciones que queremos que tengan un fondo opaco sobre la textura */
 .seccion {
     padding: 4rem 2rem;
-    background-color: rgba(255, 255, 255, 0.50); /* Fondo blanco con 75% de opacidad */
+    background-color: rgba(255, 255, 255, 0.75); /* Fondo blanco con 75% de opacidad */
     box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra para que destaque un poco */
     margin-bottom: 2rem; /* Espacio entre secciones */
     border-radius: 8px; /* Bordes ligeramente redondeados */
@@ -109,6 +109,11 @@ h4 {
 
 .seccion-clara-con-fondo h2 {
     color: var(--color-fondo-base);
+}
+
+/* Hacer solo la sección de contacto más transparente (Ajuste pedido anteriormente) */
+#contacto {
+    background-color: rgba(255, 255, 255, 0.4); 
 }
 
 /* --- TAREA 2: BARRA SUPERIOR DE CONTACTO (MODIFICADA) --- */
@@ -867,4 +872,13 @@ h4 {
     }
     .carousel-button--left { left: 0; }
     .carousel-button--right { right: 0; }
+}
+
+/* ========================================================
+   MODIFICACIÓN: Mover Widget de Calendly a la IZQUIERDA
+   ======================================================== */
+.calendly-badge-widget {
+    left: 20px !important;    /* Forzar a la izquierda */
+    right: auto !important;   /* Anular la posición derecha */
+    bottom: 20px !important;  /* Margen inferior */
 }

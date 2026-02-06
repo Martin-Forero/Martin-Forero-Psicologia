@@ -7,6 +7,8 @@
     
     <link rel="stylesheet" href="style.css">
     
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -106,7 +108,7 @@
     <header class="header">
         <div class="header-content container">
             <h1>Jorge Martín-Forero</h1>
-            <p>Psicólogo Sanitario en <strong>Puerta del Ángel</strong> <strong>(Paseo de Extremadura)<strong> | Terapia Presencial | Especialista en EMDR</p>
+            <p>Psicólogo Sanitario en <strong>Puerta del Ángel / Paseo de Extremadura </strong> | Terapia Presencial | Especialista en EMDR</p>
         </div>
     </header>
 
@@ -279,7 +281,7 @@
                 <div class="calendly-container" style="margin-bottom: 3rem;">
                     <div class="calendly-inline-widget" data-url="https://calendly.com/jgm-forero-psico/primera-sesion-30-min?background_color=F5F7F6&text_color=222222&primary_color=287C74" style="min-width:320px;height:700px;"></div>
                     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                    </div>
+                </div>
                 
                 <div class="info-contacto" style="line-height: 1.8; margin-top: 3rem; border-top: 1px solid var(--color-melocoton); padding-top: 2rem;">
                     <h3>Otros medios de contacto</h3>
@@ -293,7 +295,7 @@
                     </p>
                     <p style="font-size: 1.1rem; font-weight: 500;">
                         <i class="fas fa-map-marker-alt" aria-hidden="true" style="margin-right: 10px; color: var(--color-naranja-quemado);"></i>
-                        Calle de la Milagrosa, 4 (Barrio <strong>Puerta del Ángel/Paseo de Extremadura</strong>), Latina, 28011 Madrid
+                        Calle de la Milagrosa, 4 (Barrio <strong>Puerta del Ángel/ Paseo de Extremadura</strong>), Latina, 28011 Madrid
                     </p>
                 </div>
 
@@ -315,7 +317,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-  <div id="modal-historia" class="modal">
+    <div id="modal-historia" class="modal">
         <div class="modal-content">
             <a href="#" class="modal-close">&times;</a>
             <h3>Mi Historia</h3>
@@ -345,5 +347,17 @@
 
     <script src="script.js"></script>
 
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script type="text/javascript">
+        window.onload = function() { 
+            Calendly.initBadgeWidget({ 
+                url: 'https://calendly.com/jgm-forero-psico/primera-sesion-30-min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=f5f7f6&text_color=222222&primary_color=23ba7c', 
+                text: 'Programa reunión grauita de 30 min', 
+                color: '#CA3D11', 
+                textColor: '#FFFFFF', 
+                branding: false 
+            }); 
+        }
+    </script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 /* --- VARIABLES DE COLOR (Paleta basada en la Imagen 3) --- */
 :root {
+    --color-calendly-naranja: #CA3D11;
     --color-fondo-base: #F8EFEA;      /* Beige-rosa claro, para texto */
     --color-texto-oscuro: #4A3C32;     /* Marrón oscuro, para texto principal */
     --color-navbar: #FDF9F7;           /* Blanco muy roto (Referencia para opacidad) */
@@ -881,4 +882,44 @@ h4 {
     left: 20px !important;    /* Forzar a la izquierda */
     right: auto !important;   /* Anular la posición derecha */
     bottom: 20px !important;  /* Margen inferior */
+}
+
+/* --- BOTÓN CALENDLY FLOTANTE (IZQUIERDA) --- */
+.calendly-flotante {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* Lo situamos a la izquierda */
+    background-color: var(--color-calendly-naranja);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.calendly-flotante img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px; /* Ajusta este padding si quieres el icono más grande o pequeño */
+}
+
+.calendly-flotante:hover {
+    transform: scale(1.1);
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .calendly-flotante {
+        width: 55px;
+        height: 55px;
+        bottom: 15px;
+        left: 15px;
+    }
 }

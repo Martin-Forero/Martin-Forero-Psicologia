@@ -398,6 +398,145 @@ h4 {
     color: var(--color-texto-oscuro);
 }
 
+/* --- SECCIÓN: TARIFAS (NUEVO) --- */
+.tarifas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto; /* Centrar las tarjetas en el contenedor */
+}
+
+.tarifa-card {
+    background-color: var(--color-blanco);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.tarifa-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Estilo especial para la tarjeta destacada */
+.tarifa-card.destacado {
+    border: 2px solid var(--color-verde-principal);
+    transform: scale(1.02); /* Un poquito más grande por defecto */
+}
+.tarifa-card.destacado:hover {
+    transform: scale(1.02) translateY(-8px);
+}
+
+.etiqueta-destacada {
+    background-color: var(--color-verde-principal);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tarifa-header {
+    background-color: rgba(92, 116, 87, 0.05); /* Fondo verde muy clarito */
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.tarifa-header h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.precio {
+    font-family: 'EB Garamond', serif;
+    font-size: 3rem;
+    color: var(--color-verde-principal);
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+/* Hacer que "Gratuita" destaque pero con letra más pequeña si es texto largo */
+.tarifa-card:first-child .precio {
+    font-size: 2.5rem; 
+    color: var(--color-naranja-quemado); /* Naranja para la oferta gratis */
+}
+
+.duracion {
+    font-size: 1rem;
+    color: #777;
+    font-weight: 500;
+}
+
+.tarifa-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Para que ocupen la misma altura */
+    text-align: center;
+}
+
+.tarifa-body p {
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    color: #666;
+}
+
+.tarifa-lista {
+    list-style: none;
+    margin-bottom: 2rem;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tarifa-lista li {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.tarifa-lista li i {
+    color: var(--color-verde-principal);
+    margin-right: 10px;
+}
+
+/* Botón específico de tarifas */
+.btn-tarifa {
+    margin-top: auto; /* Empuja el botón al fondo */
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid var(--color-verde-principal);
+    color: var(--color-verde-principal);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-tarifa:hover {
+    background-color: var(--color-verde-principal);
+    color: white;
+}
+
+.btn-tarifa.btn-primary {
+    background-color: var(--color-verde-principal);
+    color: white;
+}
+.btn-tarifa.btn-primary:hover {
+    background-color: var(--color-verde-oscuro);
+    border-color: var(--color-verde-oscuro);
+}
+
+
+
 /* --- SECCIÓN: CONTACTO --- */
 .contact-form {
     max-width: 700px;
@@ -845,6 +984,16 @@ h4 {
         font-size: 2.5rem;
     }
 
+    /* AJUSTE PARA TARIFAS EN MÓVIL (NUEVO) */
+    .tarifas-grid {
+        grid-template-columns: 1fr; /* Una columna */
+        gap: 2rem;
+    }
+    .tarifa-card.destacado {
+        transform: scale(1); /* Quitar el efecto de escala en móvil */
+    }
+
+
     .contact-form {
         padding: 1.5rem;
     }
@@ -954,12 +1103,3 @@ h4 {
     border-style: solid;
     border-color: transparent transparent transparent white;
 }
-
-/* EN MÓVIL: Si quieres ocultar el texto para que no tape la pantalla, descomenta esto: */
-/*
-@media (max-width: 768px) {
-    .tooltip-texto {
-        display: none;
-    }
-}
-*/

@@ -1045,12 +1045,12 @@ h4 {
 /* ========================================================
    BOTÓN FLOTANTE AZUL CON ETIQUETA
    ======================================================== */
+/* 1. PRIMERO: Definición general del botón azul (Ahora está antes del móvil) */
 .calendly-flotante {
     position: fixed;
-    /* Posición: encima del WhatsApp (20px bottom + 60px height + 15px hueco = 95px) */
     bottom: 95px; 
     right: 20px;
-    background-color: #5B9FDC; /* Azul solicitado */
+    background-color: #5B9FDC;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -1061,8 +1061,6 @@ h4 {
     z-index: 1000;
     transition: transform 0.3s;
     text-decoration: none;
-    
-    /* ¡MUY IMPORTANTE! Esto permite que el texto se vea fuera del círculo */
     overflow: visible; 
 }
 
@@ -1070,36 +1068,56 @@ h4 {
     transform: scale(1.1);
 }
 
-/* Estilo de la etiqueta de texto ("¡Primera sesión GRATIS!") */
 .tooltip-texto {
     position: absolute;
-    right: 75px; /* Lo empuja 75px a la izquierda desde el borde derecho */
+    right: 75px;
     top: 50%;
-    transform: translateY(-50%); /* Lo centra verticalmente exacto */
-    
+    transform: translateY(-50%);
     background-color: white;
-    color: #4A3C32; /* Tu color marrón oscuro corporativo */
+    color: #4A3C32;
     padding: 8px 15px;
-    border-radius: 50px; /* Bordes muy redondeados */
+    border-radius: 50px;
     font-size: 0.9rem;
-    font-weight: 700; /* Negrita */
-    white-space: nowrap; /* Obliga a que sea una sola línea */
+    font-weight: 700;
+    white-space: nowrap;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    
-    /* Opcional: animación suave */
     opacity: 1; 
     transition: opacity 0.3s;
-    pointer-events: none; /* Para que el click traspase si estorba */
+    pointer-events: none;
 }
 
-/* El triangulito (flecha) que apunta al botón */
 .tooltip-texto::after {
     content: '';
     position: absolute;
-    right: -6px; /* Posición de la flecha */
+    right: -6px;
     top: 50%;
     margin-top: -6px;
     border-width: 6px;
     border-style: solid;
     border-color: transparent transparent transparent white;
+}
+
+/* 2. SEGUNDO: Reglas para móviles (Ahora sí tendrán prioridad) */
+@media (max-width: 768px) {
+    /* ... (aquí iría el resto de tu código de móvil que ya tienes) ... */
+
+    .calendly-flotante, .whatsapp-flotante {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .whatsapp-flotante {
+        bottom: 15px;
+        right: 15px; /* Ambos a 15px */
+    }
+    
+    .calendly-flotante {
+        bottom: 85px;
+        right: 15px; /* Ambos a 15px - AHORA SÍ SE APLICARÁ */
+    }
+
+    .tooltip-texto {
+        right: 65px; /* Ajustamos la etiqueta para que no se pegue al borde en móvil */
+        font-size: 0.8rem;
+    }
 }

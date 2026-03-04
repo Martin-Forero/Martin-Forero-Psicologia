@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por suscribirte! | Jorge Martín-Forero</title>
+
+    <!-- Usamos los estilos globales del proyecto para mantener colores y tipografía 100% coherentes -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="landing.css">
+
+    <!-- Fuentes corporativas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ESTILOS ESPECÍFICOS: PÁGINA DE GRACIAS */
+
+        /* Reseteo del body para centrado total y sin padding del nav global */
+        body.gracias-body {
+            background-color: var(--color-fondo-base);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-top: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        /* Usamos el mismo fondo de la landing para que el logo blanco destaque */
+        body.gracias-body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            background-color: var(--color-fondo-base);
+            background-image: url('Montañas fondo con azul.webp');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+
+
+        /* Contenedor central principal */
+        .gracias-main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Caja del contenido con sombra elegante */
+        .gracias-card {
+            background-color: var(--color-blanco);
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            max-width: 650px;
+            width: 100%;
+            border: 1px solid rgba(92, 116, 87, 0.1);
+        }
+
+        .gracias-card h1 {
+            font-size: 2.8rem;
+            color: var(--color-verde-principal);
+            margin-bottom: 0.5rem;
+            font-family: 'EB Garamond', serif;
+            line-height: 1.2;
+        }
+
+        .gracias-card h2 {
+            font-size: 1.6rem;
+            color: var(--color-naranja-quemado);
+            margin-bottom: 2.5rem;
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .gracias-card p {
+            font-size: 1.15rem;
+            color: var(--color-texto-oscuro);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            text-align: center;
+            /* Sobrescribe la justificación global del style.css */
+        }
+
+        /* Caja de la nota para que destaque sutilmente */
+        .gracias-nota {
+            font-size: 0.95rem !important;
+            opacity: 0.9;
+            background-color: rgba(246, 173, 156, 0.15);
+            /* Color melocotón con transparencia */
+            padding: 1.2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--color-naranja-quemado);
+            text-align: left !important;
+            margin-bottom: 0;
+        }
+
+        .gracias-btn-container {
+            margin-top: 3.5rem;
+        }
+
+        /* Ajustes de responsive */
+        @media (max-width: 600px) {
+            .gracias-card {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .gracias-card h1 {
+                font-size: 2.2rem;
+            }
+
+            .gracias-card h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="gracias-body">
+
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="gracias-main">
+        <div class="gracias-card">
+            <h1>¡Gracias por suscribirte!</h1>
+            <h2>Ya estás dentro del Círculo.</h2>
+
+            <p>Tu registro se ha completado correctamente.<br>En los próximos minutos recibirás un <strong>correo de
+                    bienvenida</strong> en tu bandeja de entrada.</p>
+
+            <p class="gracias-nota">
+                <strong>💡 Nota:</strong> Si no lo ves, por favor, echa un vistazo a la carpeta de <em>spam</em> o
+                promociones y añade mi dirección a tus contactos para no perderte nada.
+            </p>
+
+            <div class="gracias-btn-container">
+                <!-- Usando la clase .btn global para heredar el estilo corporativo idéntico -->
+                <a href="index.html" class="btn" style="padding: 1.2rem 2.5rem; font-size: 1.1rem; border-radius: 8px;">
+                    Volver a la página principal
+                </a>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

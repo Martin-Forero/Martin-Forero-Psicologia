@@ -82,40 +82,72 @@
                     <p>Comienza hoy tu camino hacia una crianza más segura.</p>
                 </div>
 
-                <!-- CODIGO DE MAILRELAY -->
                 <form class="simple_form form form-vertical" id="subscribe-form"
                     action="https://martinforeropsicologia.ipzmarketing.com/f/L5x4uDjPHlU" accept-charset="UTF-8"
                     method="post">
+
                     <input type="text" name="anotheremail" id="anotheremail" style="position: absolute; left: -5000px"
                         tabindex="-1" autocomplete="new-password" />
+
                     <div class="signup-form-content">
-                        <div class="form-group">
-                            <label class="control-label" for="subscriber_name">Tu Nombre</label>
-                            <input class="form-control" type="text" name="subscriber[name]" id="subscriber_name"
-                                required placeholder="Ej. Ana" />
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label" for="subscriber_email">Tu mejor Email</label>
-                            <input class="form-control" type="email" name="subscriber[email]" id="subscriber_email"
-                                required placeholder="tuemail@ejemplo.com" />
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label" for="subscriber_whatsapp_phone">Teléfono (Opcional)</label>
-                            <input class="form-control" type="tel" name="subscriber[whatsapp_phone]"
-                                id="subscriber_whatsapp_phone" placeholder="Ej. 600 000 000" />
+                        <!-- Campo Nombre -->
+                        <div class="form-group string optional subscriber_name" style="width: 100%">
+                            <label class="control-label string optional" for="subscriber_name">Tu Nombre</label>
+                            <input class="form-control string optional" type="text" name="subscriber[name]"
+                                id="subscriber_name" required placeholder="Ej. Ana" />
                         </div>
 
-                        <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                        <!-- Campo Email -->
+                        <div class="form-group email optional subscriber_email" style="width: 100%">
+                            <label class="control-label email optional" for="subscriber_email">Tu mejor Email</label>
+                            <input class="form-control string email optional" type="email" name="subscriber[email]"
+                                id="subscriber_email" required placeholder="tuemail@ejemplo.com" />
+                        </div>
+
+                        <!-- Campo Teléfono (WhatsApp) -->
+                        <div class="form-group tel optional subscriber_whatsapp_phone" style="width: 100%">
+                            <label class="control-label tel optional" for="subscriber_whatsapp_phone">Teléfono
+                                (Opcional)</label>
+                            <input class="form-control string tel optional" type="tel" name="subscriber[whatsapp_phone]"
+                                id="subscriber_whatsapp_phone" placeholder="Ej. 600 000 000" />
+                            <p
+                                style="font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 0.4rem; font-style: italic; text-align: left;">
+                                Solo recursos útiles y notificaciones puntuales. Nunca lo vendemos.</p>
+                        </div>
+
+                        <!-- reCAPTCHA -->
+                        <div
+                            style="margin-top: 1.5rem; margin-bottom: 1.5rem; display: flex; justify-content: center; width: 100%;">
                             <script src="https://www.recaptcha.net/recaptcha/api.js" async defer></script>
                             <div data-sitekey="6LfxSlQUAAAAAE2wMx0128AjWWFXJoBkiNQn2m8m" class="g-recaptcha"></div>
+                            <noscript>
+                                <div>
+                                    <div style="width: 302px; height: 422px; position: relative;">
+                                        <div style="width: 302px; height: 422px; position: absolute;">
+                                            <iframe
+                                                src="https://www.recaptcha.net/recaptcha/api/fallback?k=6LfxSlQUAAAAAE2wMx0128AjWWFXJoBkiNQn2m8m"
+                                                name="ReCAPTCHA"
+                                                style="width: 302px; height: 422px; border-style: none; border: 0; overflow: hidden;"></iframe>
+                                        </div>
+                                    </div>
+                                    <div
+                                        style="width: 300px; height: 60px; border-style: none; bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px; background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                                        <textarea name="g-recaptcha-response" class="g-recaptcha-response"
+                                            style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;"></textarea>
+                                    </div>
+                                </div>
+                            </noscript>
                         </div>
 
-                        <div class="submit-wrapper" style="text-align: center;">
+                        <!-- Botón de Envío -->
+                        <div class="submit-wrapper" style="text-align: center; width: 100%;">
                             <input type="submit" name="commit"
                                 value="Quiero aprender del Círculo de la Seguridad Parental"
                                 class="btn btn-primary btn-submit-fix"
                                 style="width: 100%; padding: 1.2rem; font-weight: bold; cursor: pointer;"
-                                data-disable-with="Enviando..." />
+                                data-disable-with="Procesando..." />
+
+                            <!-- Privacidad -->
                             <div class="form-privacy" style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.8;">
                                 🔒 Respeto tu privacidad. Sin spam, baja con un clic.
                             </div>
